@@ -1,0 +1,21 @@
+name: test-all
+on:
+  push:
+    branches-ignore:
+      - 'dependabot/**' #avoid duplicates: only run the PR, not the commit
+      - 'gh-pages' #github pages do not trigger all tests
+    tags-ignore:
+      - 'v*' #avoid rerun existing commit on release
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -L  -X POST  https://api.github.com/repos/giis-uniovi/test-jenkins-check/statuses/${{ github.sha }} \
+             -H "Accept: application/vnd.github+json" \
+             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+             -H "X-GitHub-Api-Version: 2022-11-28" \
+             -d "{\"state\":\"pending\", \"context\":\"Jenkins CI\"}"
+        
+      - name: Sleeping
+        run: sleep 5
