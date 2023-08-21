@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          curl -L  -X POST  https://api.github.com/repos/giis-uniovi/test-jenkins-check/statuses/${{ github.sha }} \
+          curl -L -X POST  https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
              -H "Accept: application/vnd.github+json" \
              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
              -H "X-GitHub-Api-Version: 2022-11-28" \
