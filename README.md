@@ -2,4 +2,4 @@
 
 Test pr+
 
-Test with qabot cred
+Test with qabot cred+
