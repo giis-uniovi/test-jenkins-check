@@ -15,7 +15,7 @@ jobs:
              -H "Accept: application/vnd.github+json" \
              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
              -H "X-GitHub-Api-Version: 2022-11-28" \
-             -d "{\"state\":\"pending\", \"description\":\"Building\", \"context\":\"Jenkins CI\"}"
+             -d "{\"state\":\"pending\", \"context\":\"Jenkins CI\"}"
         
       - name: Sleeping
         run: sleep 5
