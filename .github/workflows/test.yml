@@ -12,7 +12,8 @@ jobs:
     steps:
       - run: |
           curl -L  -X POST  https://api.github.com/repos/giis-uniovi/test-jenkins-check/statuses/${{ env.GITHUB_SHA }} \
-            -d "{\"state\":\"pending\", \"context\":\"Jenkins CI\"}"
+              -H "Authorization: Bearer ${{ env.GITHUB_TOKEN }}" \
+              -d "{\"state\":\"pending\", \"context\":\"Jenkins CI\"}"
         
       - name: Sleeping
         run: sleep 15
