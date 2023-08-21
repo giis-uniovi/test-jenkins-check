@@ -1,6 +1,6 @@
 # test-jenkins-check
 
 push+++++
-pr
+pr+
 
 pr from other user
