@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          curl -L  -X POST  https://api.github.com/repos/giis-uniovi/test-jenkins-check/statuses/${{ env.GITHUB_SHA }} \
+          curl -L  -X POST  https://api.github.com/repos/giis-uniovi/test-jenkins-check/statuses/${{ github.sha }} \
               -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
               -d "{\"state\":\"pending\", \"context\":\"Jenkins CI\"}"
         
