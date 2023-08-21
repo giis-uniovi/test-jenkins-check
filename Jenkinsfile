@@ -3,6 +3,6 @@ node('slave-x1') {
 	checkout scm
 	stage("run") {
 	    sh "sleep 30"
-	    sh "exit 0"
+	    sh "exit 1"
 	}
 }
