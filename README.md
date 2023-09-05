@@ -1,5 +1,5 @@
 # test-jenkins-check
-change one
+change one+
 
 Test pr+
 
@@ -13,4 +13,4 @@ test admin
 
 last after revert check_mergeability
 
-change two
+change two+
