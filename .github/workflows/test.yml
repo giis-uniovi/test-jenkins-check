@@ -10,7 +10,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: |
           curl -L -X POST  https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
              -H "Accept: application/vnd.github+json" \
