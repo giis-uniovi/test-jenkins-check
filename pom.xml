@@ -1,0 +1,120 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.fullteaching</groupId>
+    <artifactId>e2e.no-elastest</artifactId>
+    <version>1.1.1-SNAPSHOT</version>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Non Elastest E2E (end-to-end) for FullTeaching.</description>
+    <url>https://github.com/elastest/full-teaching/tree/no-Elastest/e2e-test</url>
+
+    <!-- Organization & developers -->
+    <organization>
+        <name>Elastest</name>
+        <url>http://elastest.io</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>gtunon</id>
+            <organization>NAEVATEC</organization>
+            <organizationUrl>https://www.naevatec.com/</organizationUrl>
+        </developer>
+    </developers>
+
+    <properties>
+        <!-- This oversuscribe the ENV variable-->
+        <RETORCH_TESTENV>false</RETORCH_TESTENV>
+
+        <!-- Java 8 -->
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.version>3.11.0</maven.compiler.version>
+        <!-- Encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- Test dependencies version -->
+        <junit.jupiter.version>5.5.2</junit.jupiter.version>
+        
+        <junit.platform.version>1.0.0</junit.platform.version>
+        
+        <selenium-jupiter.version>4.3.7</selenium-jupiter.version>
+        
+        <slf4j.version>2.0.7</slf4j.version>
+        
+        <junit-jupiter-engine.version>5.10.0</junit-jupiter-engine.version>
+        
+        <junit-jupiter-params.version>5.10.0</junit-jupiter-params.version>
+        
+        <junit.version>4.13.2</junit.version>
+        
+        <webdrivermanager.version>5.5.3</webdrivermanager.version>
+        
+        <retorch.version>1.1.0</retorch.version>
+        
+        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        
+        <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+        
+        <!-- Plugins Jacoco -->
+        <jacoco.version>0.8.10</jacoco.version>
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+        <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+        <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+        <sonar.language>java</sonar.language>
+    </properties>
+
+    <scm>
+        <url>https://github.com/elastest/full-teaching</url>
+        <connection>scm:git:https://github.com/elastest/full-teaching</connection>
+        <developerConnection>scm:git://git@github.com:elastest/full-teaching</developerConnection>
+        <tag>no-Elastest</tag>
+    </scm>
+
+    <!-- Distribution management -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter-engine.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit-jupiter-params.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--	As of version 4, Selenium-Jupiter does not include Selenium WebDriver as a transitive dependency.-->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
