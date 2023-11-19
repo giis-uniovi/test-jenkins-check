@@ -1,5 +1,5 @@
 # test-jenkins-check
-add line other
+add line othermore
 change one+
 
 Test pr+
