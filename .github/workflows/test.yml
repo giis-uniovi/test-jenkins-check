@@ -21,4 +21,6 @@ jobs:
           java-version: '11'
           cache: 'maven'
       - name: Sleeping
-        run: sleep 5
+        run: sleep 30
+      - name: Final Result
+        run: "exit 1"
