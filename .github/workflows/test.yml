@@ -23,5 +23,5 @@ jobs:
       - name: Sleeping
         run: sleep 30
       - name: Final Result
-        run: "exit 0"
+        run: "exit 1"
         
