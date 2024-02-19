@@ -2,7 +2,7 @@
 test
 add line othermore
 change one+
-add line from fork
+add line from fork2
 Test pr+
 
 Test with qabot cred+
