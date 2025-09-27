@@ -1,3 +1,3 @@
 # test-jenkins-check
 
-test token renew2
+test token renew3
