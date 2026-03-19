@@ -1,4 +1,5 @@
 # test-jenkins-check
+cancel
 test
 add line othermore
 change one+
